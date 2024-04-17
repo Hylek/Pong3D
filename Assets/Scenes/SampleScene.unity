@@ -342,7 +342,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -715,6 +715,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9087209723448269670, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e7196d6d4d774004ae76bc08c3be2a4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -910,6 +914,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_colorMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.56247777
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.52118194
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4288319365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.88461155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.8329477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.88461155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.8329477
+      objectReference: {fileID: 0}
     - target: {fileID: 7342350365096834484, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
       propertyPath: m_Name
       value: RightScore
@@ -939,9 +1015,10 @@ GameObject:
   - component: {fileID: 1464309771}
   - component: {fileID: 1464309770}
   - component: {fileID: 1464309769}
+  - component: {fileID: 1464309772}
   m_Layer: 6
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -968,7 +1045,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464309767}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a0a8291cca7e4860883b92fb01f38c0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1035,6 +1112,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464309767}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1464309772
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464309767}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1649281314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,9 +1151,10 @@ GameObject:
   - component: {fileID: 1649281318}
   - component: {fileID: 1649281317}
   - component: {fileID: 1649281316}
+  - component: {fileID: 1649281319}
   m_Layer: 6
   m_Name: BotWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1076,7 +1181,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649281314}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a0a8291cca7e4860883b92fb01f38c0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1143,6 +1248,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649281314}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1649281319
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649281314}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &1736844134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7751880153865361140, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
@@ -1321,9 +1453,10 @@ GameObject:
   - component: {fileID: 2031068640}
   - component: {fileID: 2031068639}
   - component: {fileID: 2031068638}
+  - component: {fileID: 2031068641}
   m_Layer: 6
   m_Name: TopWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1350,7 +1483,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031068636}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a0a8291cca7e4860883b92fb01f38c0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1417,6 +1550,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031068636}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2031068641
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031068636}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2054165851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,9 +1589,10 @@ GameObject:
   - component: {fileID: 2054165855}
   - component: {fileID: 2054165854}
   - component: {fileID: 2054165853}
+  - component: {fileID: 2054165856}
   m_Layer: 6
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1458,7 +1619,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054165851}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8a0a8291cca7e4860883b92fb01f38c0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1525,6 +1686,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054165851}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2054165856
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054165851}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1904439289570628209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1536,6 +1724,10 @@ PrefabInstance:
     - target: {fileID: 3741980174714357045, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
       propertyPath: m_Name
       value: TheBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633230985969187990, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7751880153865361140, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1577,6 +1769,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7801860987600359537, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 98783228d1aa14fe28a8dd1a26124357, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1634,6 +1830,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9087209723448269670, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e7196d6d4d774004ae76bc08c3be2a4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1726,6 +1926,82 @@ PrefabInstance:
     - target: {fileID: 6121028819783208415, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_text
+      value: 00
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_colorMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.56247777
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.52118194
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4288319365
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.88461155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.8329477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.88461155
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284918298106000977, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.8329477
       objectReference: {fileID: 0}
     - target: {fileID: 7342350365096834484, guid: 3f10f79315a38417b95130df4ee2ec64, type: 3}
       propertyPath: m_Name
