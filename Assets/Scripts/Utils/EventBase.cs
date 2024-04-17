@@ -5,12 +5,6 @@ using DC.MessageService;
 
 namespace Utils
 {
-    public interface IEventBase
-    {
-        public void Subscribe<T>(Action<T> action) where T : class, ITinyMessage;
-        public void Unsubscribe<T>();
-    }
-    
     public class EventBase : IEventBase, IDisposable
     {
         private readonly Dictionary<Type, TinyMessageSubscriptionToken> _tokens = new();

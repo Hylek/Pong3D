@@ -2,7 +2,11 @@ using DC.MessageService;
 
 namespace Utils
 {
-    public class Locator : BaseLocator
+    /// <summary>
+    /// Locator class that contains implementations for service classes to maintain cleaner code in other classes by
+    /// keeping find checks and instantiation in one location.
+    /// </summary>
+    internal abstract class Locator : BaseLocator
     {
         public static ITinyMessengerHub EBus
         {
