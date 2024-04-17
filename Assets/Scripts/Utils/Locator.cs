@@ -13,13 +13,18 @@ namespace Utils
         {
             get
             {
-                var hub = Find<ITinyMessengerHub>();
+                if (DoesServiceExist(typeof(ITinyMessengerHub)))
+                {
+                    var hub = Find<ITinyMessengerHub>();
 
-                if (hub != null) return hub;
+                    return hub;
+                }
+                else
+                {
+                    var instance = Add<ITinyMessengerHub>(new TinyMessengerHub());
 
-                var instance = Add<ITinyMessengerHub>(new TinyMessengerHub());
-
-                return instance;
+                    return instance;
+                }
             }
         }
         
@@ -27,13 +32,18 @@ namespace Utils
         {
             get
             {
-                var app = Find<IPongApp>();
+                if (DoesServiceExist(typeof(IPongApp)))
+                {
+                    var hub = Find<IPongApp>();
 
-                if (app != null) return app;
+                    return hub;
+                }
+                else
+                {
+                    var instance = Add<IPongApp>(new PongApp());
 
-                var instance = Add<IPongApp>(new PongApp());
-
-                return instance;
+                    return instance;
+                }
             }
         }
     }

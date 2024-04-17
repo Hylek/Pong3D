@@ -1,12 +1,12 @@
+using Core;
 using DC.MessageService;
-using Gameplay;
 using UnityEngine;
 
 namespace Messages
 {
-    public class BallEnteredDeadZoneMessage : GenericTinyMessage<DeadZoneSide>
+    public class BallEnteredDeadZoneMessage : GenericTinyMessage<PongSide>
     {
-        public BallEnteredDeadZoneMessage(object sender, DeadZoneSide content) : base(sender, content)
+        public BallEnteredDeadZoneMessage(object sender, PongSide content) : base(sender, content)
         {
             Debug.Log($"BallEnteredDeadZoneMessage Fired. Content: {content}");
         }

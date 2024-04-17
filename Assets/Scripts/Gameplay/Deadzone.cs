@@ -1,16 +1,12 @@
+using Core;
 using UnityEngine;
 using Utils;
 
 namespace Gameplay
 {
-    public enum DeadZoneSide
-    {
-        Left, Right
-    }
-    
     public class DeadZone : ExtendedBehaviour
     {
-        [SerializeField] private DeadZoneSide side;
+        [SerializeField] private PongSide side;
         [SerializeField] private bool showGizmo;
 
         private void OnDrawGizmos()
@@ -21,6 +17,6 @@ namespace Gameplay
             Gizmos.DrawCube(transform.position, transform.localScale);
         }
 
-        public DeadZoneSide GetSide() => side;
+        public PongSide GetSide() => side;
     }
 }
