@@ -40,16 +40,15 @@ namespace Gameplay
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("DeadZone"))
-            {
-                var script = other.gameObject.GetComponent<DeadZone>();
-                var side = script.GetSide();
+            if (!other.gameObject.CompareTag("DeadZone")) return;
+            
+            var script = other.gameObject.GetComponent<DeadZone>();
+            var side = script.GetSide();
                 
-                Debug.Log($"Ball has hit the {side} dead-zone!");
+            Debug.Log($"Ball has hit the {side} dead-zone!");
                 
-                Die();
-                Locator.EBus.Publish(new BallEnteredDeadZoneMessage(this, side));
-            }
+            Die();
+            Locator.EBus.Publish(new BallEnteredDeadZoneMessage(this, side));
         }
 
         private void Die()
@@ -74,10 +73,19 @@ namespace Gameplay
         
         private void ApplyStartForce()
         {
-            _rb.linearVelocity = new Vector3(
-                Random.Range(-1f, 1f) * Mathf.Cos(startAngleX) * speed,
-                0f,
-                Random.Range(-1f, 1f) * Mathf.Sin(startAngleY) * speed);
+            // Calculate random angle within the 45-degree arc
+            float randomAngle = Random.Range(startAngleX, startAngleY);
+            float randomAngleRadians = randomAngle * Mathf.Deg2Rad;
+
+            // Define a random direction within the arc (right or left)
+            bool randomDirection = Random.Range(0f, 1f) > 0.5f; // Randomly choose true or false
+
+            // Set X and Z components of velocity based on angle and direction
+            float xVelocity = Mathf.Cos(randomAngleRadians) * (randomDirection ? 1f : -1f) * speed;
+            float zVelocity = Mathf.Sin(randomAngleRadians) * speed;
+
+            // Set the ball's initial velocity
+            _rb.linearVelocity = new Vector3(xVelocity, 0f, zVelocity);
         }
 
         private void ApplyDissolve() => _dissolver.StartDissolve(DissolveState.Dissolve);

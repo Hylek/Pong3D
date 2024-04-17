@@ -6,26 +6,26 @@ namespace Gameplay
 {
     public class Paddle : ExtendedBehaviour
     {
-        [SerializeField] private InputActionAsset paddleMovement;
-        
-        public float speed;
-        public float minY;
-        public float maxY;
+        [SerializeField] private float paddleSpeed;
+        [SerializeField] private float minZ, maxZ;
 
-        private Rigidbody2D _rb;
+        private PlayerInput _input;
+        private InputAction _movement;
+        private Vector2 _moveVector;
 
-        private void Start()
+        protected override void Awake()
         {
-            _rb = GetComponent<Rigidbody2D>();
+            base.Awake();
+            
+            _input = GetComponent<PlayerInput>();
+            _movement = _input.actions["Movement"]; // todo: Better way than just hard coded string? Will break if action name ever changes (unlikely).
         }
 
         private void Update()
         {
-            //var movement = Input.GetAxis("Vertical") * speed; // Get input for movement
-            
-            //movement = Mathf.Clamp(movement, minY - transform.localScale.y / 2, maxY + transform.localScale.y / 2);
-
-            //_rb.MovePosition(_rb.position + new Vector2(0, movement * Time.deltaTime));
+            _moveVector = _movement.ReadValue<Vector2>();
+            var newZ = Mathf.Clamp(transform.position.z + _moveVector.y * paddleSpeed * Time.deltaTime, minZ, maxZ);
+            transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
         }
     }
 

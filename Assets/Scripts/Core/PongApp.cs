@@ -15,9 +15,6 @@ namespace Core
         
         public void LogScore(PongSide side)
         {
-            Debug.Log($"Score has been changed! " +
-                      $"Current Score: Left: {_leftPlayerScore} Right: {_rightPlayerScore}");
-            
             if (side == PongSide.Left)
             {
                 _leftPlayerScore++;
@@ -26,6 +23,9 @@ namespace Core
             {
                 _rightPlayerScore++;
             }
+            
+            Debug.Log($"Score has been changed! " +
+                      $"Current Score: Left: {_leftPlayerScore} Right: {_rightPlayerScore}");
         }
 
         public int GetScore(PongSide side) => side == PongSide.Left ? _leftPlayerScore : _rightPlayerScore;

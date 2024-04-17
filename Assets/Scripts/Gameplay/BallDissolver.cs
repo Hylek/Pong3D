@@ -39,8 +39,6 @@ namespace Gameplay
 
             _currentTime += Time.deltaTime;
             var value = Mathf.Lerp(_startValue, _endValue, Mathf.Clamp01(_currentTime / 1f));
-            
-            Debug.Log($"Dissolve in progress: {value}");
 
             _ballMaterial.SetFloat(Dissolve, value);
 
