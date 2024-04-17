@@ -1,3 +1,4 @@
+using Core;
 using DC.MessageService;
 
 namespace Utils
@@ -17,6 +18,20 @@ namespace Utils
                 if (hub != null) return hub;
 
                 var instance = Add<ITinyMessengerHub>(new TinyMessengerHub());
+
+                return instance;
+            }
+        }
+        
+        public static IPongApp App
+        {
+            get
+            {
+                var app = Find<IPongApp>();
+
+                if (app != null) return app;
+
+                var instance = Add<IPongApp>(new PongApp());
 
                 return instance;
             }

@@ -46,7 +46,7 @@ namespace Utils
                 objectTransform.hideFlags = HideFlags.HideInInspector;
             Tools.current = Tool.None;
 
-            InternalEditorUtility.SetIsInspectorExpanded(this, false);
+            InternalEditorUtility.SetIsInspectorExpanded(target, false);
         }
 
         private void CheckAndSetObject()
