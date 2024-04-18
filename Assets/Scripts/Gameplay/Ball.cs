@@ -40,6 +40,8 @@ namespace Gameplay
 
         private void OnCollisionEnter(Collision other)
         {
+            if (_isDead) return;
+            
             if (!other.gameObject.CompareTag("DeadZone")) return;
             
             var script = other.gameObject.GetComponent<DeadZone>();
@@ -73,19 +75,19 @@ namespace Gameplay
         
         private void ApplyStartForce()
         {
-            // Calculate random angle within the 45-degree arc
-            float randomAngle = Random.Range(startAngleX, startAngleY);
-            float randomAngleRadians = randomAngle * Mathf.Deg2Rad;
+            var randomAngle = Random.Range(startAngleX, startAngleY);
+            var randomAngleRadians = randomAngle * Mathf.Deg2Rad;
+            
+            var randomDirection = Random.Range(0f, 1f) > 0.5f;
+            
+            var xVelocity = Mathf.Cos(randomAngleRadians) * (randomDirection ? 1f : -1f) * speed;
+            var zVelocity = Mathf.Sin(randomAngleRadians) * speed;
 
-            // Define a random direction within the arc (right or left)
-            bool randomDirection = Random.Range(0f, 1f) > 0.5f; // Randomly choose true or false
-
-            // Set X and Z components of velocity based on angle and direction
-            float xVelocity = Mathf.Cos(randomAngleRadians) * (randomDirection ? 1f : -1f) * speed;
-            float zVelocity = Mathf.Sin(randomAngleRadians) * speed;
-
-            // Set the ball's initial velocity
-            _rb.linearVelocity = new Vector3(xVelocity, 0f, zVelocity);
+            var startVector = new Vector3(xVelocity, 0f, zVelocity);
+            
+            Debug.Log($"Start Vector: {startVector}");
+            
+            _rb.linearVelocity = startVector;
         }
 
         private void ApplyDissolve() => _dissolver.StartDissolve(DissolveState.Dissolve);

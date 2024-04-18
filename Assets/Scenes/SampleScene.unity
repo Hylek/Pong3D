@@ -496,6 +496,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &607174261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4476737518667503457, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
+  m_PrefabInstance: {fileID: 1013910888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &628996514
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,16 +792,37 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4e7196d6d4d774004ae76bc08c3be2a4, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1209500858199506993, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4476737518667503457, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1013910894}
   m_SourcePrefab: {fileID: 100100000, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
 --- !u!4 &1013910889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6910922294598602347, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
   m_PrefabInstance: {fileID: 1013910888}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1013910894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607174261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54b4696442240b8a085e0cad2431e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  movementRange: 3
+  ballDistanceToMove: 4
+  minZ: -5.8
+  maxZ: 5.8
 --- !u!1 &1356439246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,21 +1567,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4476737518667503457, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
   m_PrefabInstance: {fileID: 2244488968988213874}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1870091028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870091023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9047fdd5f4fc436a9a8447d7ca850c88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paddleSpeed: 20
-  minZ: -5.8
-  maxZ: 5.8
 --- !u!114 &1870091029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,7 +1763,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1915,15 +1926,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2949685819709984684, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
       propertyPath: startAngleX
-      value: 45
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -2949685819709984684, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
       propertyPath: startAngleY
-      value: 150
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 3741980174714357045, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
       propertyPath: m_Name
       value: TheBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5633230985969187990, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7751880153865361140, guid: b5e1620cf72f646f6a09fef64adec276, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2034,9 +2049,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4476737518667503457, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1870091028}
     - targetCorrespondingSourceObject: {fileID: 4476737518667503457, guid: 0bf097f53c37944fda3a4d65154c0f4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1870091029}
