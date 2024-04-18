@@ -4,9 +4,6 @@ using System.Linq;
 
 namespace Utils
 {
-    /// <summary>
-    /// Implements the Locator pattern so all service classes can be placed under one roof.
-    /// </summary>
     public abstract class BaseLocator
     {
         private static readonly Dictionary<Type, object> Services = new();
