@@ -7,5 +7,6 @@ Currently Implemented:
 
 Future Features:
 - Main Menu
+- Sounds
 - Cross-platform Support
 - Networked Multiplayer
