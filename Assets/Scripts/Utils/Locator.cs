@@ -9,7 +9,7 @@ namespace Utils
     /// </summary>
     internal abstract class Locator : BaseLocator
     {
-        public static ITinyMessengerHub EBus
+        public static ITinyMessengerHub EventHub
         {
             get
             {
@@ -22,25 +22,6 @@ namespace Utils
                 else
                 {
                     var instance = Add<ITinyMessengerHub>(new TinyMessengerHub());
-
-                    return instance;
-                }
-            }
-        }
-        
-        public static IPongApp App
-        {
-            get
-            {
-                if (DoesServiceExist(typeof(IPongApp)))
-                {
-                    var hub = Find<IPongApp>();
-
-                    return hub;
-                }
-                else
-                {
-                    var instance = Add<IPongApp>(new PongApp());
 
                     return instance;
                 }

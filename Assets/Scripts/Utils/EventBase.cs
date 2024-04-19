@@ -11,7 +11,7 @@ namespace Utils
 
         public void Subscribe<T>(Action<T> action) where T : class, ITinyMessage
         {
-            _tokens.Add(typeof(T), Locator.EBus.Subscribe(action));
+            _tokens.Add(typeof(T), Locator.EventHub.Subscribe(action));
         }
 
         public void Unsubscribe<T>()
@@ -21,7 +21,7 @@ namespace Utils
             foreach (var token in
                      _tokens.Where(token => token.Key == type))
             {
-                Locator.EBus.Unsubscribe(token.Value);
+                Locator.EventHub.Unsubscribe(token.Value);
                 _tokens.Remove(token.Key);
 
                 break;
@@ -34,7 +34,7 @@ namespace Utils
             
             foreach (var token in _tokens)
             {
-                Locator.EBus.Unsubscribe(token.Value);
+                Locator.EventHub.Unsubscribe(token.Value);
             }
             _tokens.Clear();
         }

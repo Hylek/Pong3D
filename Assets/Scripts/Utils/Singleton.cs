@@ -7,7 +7,7 @@ namespace Utils
     /// Simply implementing this won't create an GO immediately, only when it is first used.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Singleton<T> : MonoBehaviour where T : Component
+    public class Singleton<T> : ExtendedBehaviour where T : Component
     {
         private static T _instance;
 
@@ -28,7 +28,12 @@ namespace Utils
             }
         }
 
-        public virtual void Awake() => RemoveDuplicates();
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            RemoveDuplicates();
+        }
 
         private static void SetupInstance()
         {

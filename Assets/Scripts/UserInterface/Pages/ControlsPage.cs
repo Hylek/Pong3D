@@ -21,7 +21,7 @@ namespace UserInterface.Pages
 
         private void OnBackButton()
         {
-            Locator.EBus.Publish(new OpenMainMenuMessage());
+            Locator.EventHub.Publish(new OpenMainMenuMessage());
             Close();
         }
     }

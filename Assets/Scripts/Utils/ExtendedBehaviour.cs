@@ -19,7 +19,7 @@ namespace Utils
                 BaseLocator.Add<ITinyMessengerHub>(new TinyMessengerHub());
             }
             
-            _tokens.Add(typeof(T), Locator.EBus.Subscribe(action));
+            _tokens.Add(typeof(T), Locator.EventHub.Subscribe(action));
         }
         
         public void Unsubscribe<T>()
@@ -30,7 +30,7 @@ namespace Utils
                      _tokens.Where(token => token.Key == type))
             {
                 Debug.Log($"{gameObject.name} has unsubscribed from message type {token.Key.Name}");
-                Locator.EBus.Unsubscribe(token.Value);
+                Locator.EventHub.Unsubscribe(token.Value);
                 _tokens.Remove(token.Key);
 
                 break;
@@ -45,7 +45,7 @@ namespace Utils
             
             foreach (var token in _tokens)
             {
-                Locator.EBus.Unsubscribe(token.Value);
+                Locator.EventHub.Unsubscribe(token.Value);
             }
             _tokens.Clear();
         }

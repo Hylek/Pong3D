@@ -1,4 +1,5 @@
 using System;
+using DC.Countdown;
 using Messages;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,25 +30,25 @@ namespace UserInterface.Pages
 
         private void OnSinglePlayerButton()
         {
-            Locator.EBus.Publish(new StartSinglePlayerMessage());
+            Locator.EventHub.Publish(new StartSinglePlayerMessage());
             Close();
         }
         
         private void OnMultiPlayerButton()
         {
-            Locator.EBus.Publish(new StartMultiPlayerMessage());
+            Locator.EventHub.Publish(new StartMultiPlayerMessage());
             Close();
         }
         
         private void OnControlsButton()
         {
-            Locator.EBus.Publish(new OpenControlsPageMessage());
+            Locator.EventHub.Publish(new OpenControlsPageMessage());
             Close();
         }
         
         private void OnSettingsButton()
         {
-            Locator.EBus.Publish(new OpenSettingsPageMessage());
+            Locator.EventHub.Publish(new OpenSettingsPageMessage());
             Close();
         }
         

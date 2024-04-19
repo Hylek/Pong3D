@@ -1,18 +1,29 @@
+using DC.Countdown;
+using Messages;
 using UnityEngine;
 using Utils;
 
 namespace Core
 {
-    public interface IPongApp
+    public class PongApp : Singleton<PongApp>
     {
-        public void LogScore(PongSide side);
-        public int GetScore(PongSide side);
-    }
-    
-    public class PongApp : EventBase, IPongApp
-    {
-        private int _leftPlayerScore, _rightPlayerScore;
+        [SerializeField] private Countdown countdown;
         
+        private int _leftPlayerScore, _rightPlayerScore;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            Subscribe<StartSinglePlayerMessage>(OnStartSinglePlayer);
+
+            countdown.CountdownComplete += OnCountdownComplete;
+        }
+
+        private void OnStartSinglePlayer(StartSinglePlayerMessage message) => countdown.BeginCountDown();
+
+        private void OnCountdownComplete() => Locator.EventHub.Publish(new StartGameMessage());
+
         public void LogScore(PongSide side)
         {
             if (side == PongSide.Left)

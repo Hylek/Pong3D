@@ -16,4 +16,9 @@ namespace Messages
     {
         public object Sender { get; }
     }
+    
+    public class StartGameMessage : ITinyMessage
+    {
+        public object Sender { get; }
+    }
 }

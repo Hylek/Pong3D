@@ -25,9 +25,9 @@ namespace UserInterface
             if (content.Content == scoreSide) return;
             
             var side = content.Content;
-            Locator.App.LogScore(side);
+            PongApp.Instance.LogScore(side);
 
-            var stringNumber = AddLeadingZeroIfSingleDigit(Locator.App.GetScore(side));
+            var stringNumber = AddLeadingZeroIfSingleDigit(PongApp.Instance.GetScore(side));
             _text.SetText(stringNumber);
         }
         

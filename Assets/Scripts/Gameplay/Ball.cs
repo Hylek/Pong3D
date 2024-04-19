@@ -23,7 +23,7 @@ namespace Gameplay
             _dissolver = new BallDissolver(GetComponent<Renderer>().material);
             _dissolver.DissolveComplete += OnBallDissolveComplete;
             
-            Subscribe<StartSinglePlayerMessage>(OnStartGame);
+            Subscribe<StartGameMessage>(OnStartGame);
         }
 
         private void Update() => _dissolver.Update();
@@ -50,13 +50,12 @@ namespace Gameplay
             Debug.Log($"Ball has hit the {side} dead-zone!");
                 
             Die();
-            Locator.EBus.Publish(new BallEnteredDeadZoneMessage(this, side));
+            Locator.EventHub.Publish(new BallEnteredDeadZoneMessage(this, side));
         }
         
-        private void OnStartGame(StartSinglePlayerMessage message)
+        private void OnStartGame(StartGameMessage message)
         {
-            // todo: Use a countdown to start the game.
-            Invoke(nameof(ApplyStartForce), 2f);
+            Invoke(nameof(ApplyStartForce), .5f);
         }
 
         private void Die()
@@ -72,7 +71,7 @@ namespace Gameplay
             transform.position = _resetVector;
             _rb.linearVelocity = Vector3.zero;
             RevertDissolve();
-            Locator.EBus.Publish(new BallResetMessage());
+            Locator.EventHub.Publish(new BallResetMessage());
         }
         
         private void OnBallDissolveComplete()
