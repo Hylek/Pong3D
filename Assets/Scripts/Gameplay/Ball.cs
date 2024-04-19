@@ -1,3 +1,4 @@
+using System;
 using Messages;
 using UnityEngine;
 using Utils;
@@ -21,9 +22,9 @@ namespace Gameplay
             _rb = GetComponent<Rigidbody>();
             _dissolver = new BallDissolver(GetComponent<Renderer>().material);
             _dissolver.DissolveComplete += OnBallDissolveComplete;
+            
+            Subscribe<StartSinglePlayerMessage>(OnStartGame);
         }
-
-        private void Start() => ApplyStartForce();
 
         private void Update() => _dissolver.Update();
 
@@ -51,6 +52,12 @@ namespace Gameplay
             Die();
             Locator.EBus.Publish(new BallEnteredDeadZoneMessage(this, side));
         }
+        
+        private void OnStartGame(StartSinglePlayerMessage message)
+        {
+            // todo: Use a countdown to start the game.
+            Invoke(nameof(ApplyStartForce), 2f);
+        }
 
         private void Die()
         {
@@ -65,6 +72,7 @@ namespace Gameplay
             transform.position = _resetVector;
             _rb.linearVelocity = Vector3.zero;
             RevertDissolve();
+            Locator.EBus.Publish(new BallResetMessage());
         }
         
         private void OnBallDissolveComplete()
@@ -74,19 +82,14 @@ namespace Gameplay
         
         private void ApplyStartForce()
         {
-            var randomAngle = Random.Range(startAngleX, startAngleY);
-            var randomAngleRadians = randomAngle * Mathf.Deg2Rad;
+            var direction = Random.onUnitSphere;
+            var randomSpeed = Random.Range(minSpeed, speed);
             
-            var randomDirection = Random.Range(0f, 1f) > 0.5f;
-            
-            var xVelocity = Mathf.Cos(randomAngleRadians) * (randomDirection ? 1f : -1f) * speed;
-            var zVelocity = Mathf.Sin(randomAngleRadians) * speed;
+            // Clamp direction x position so ball does not get stuck.
+            var clampedX = Mathf.Max(4f * Mathf.Sign(direction.x));
+            direction.x = clampedX;
 
-            var startVector = new Vector3(xVelocity, 0f, zVelocity);
-            
-            Debug.Log($"Start Vector: {startVector}");
-            
-            _rb.linearVelocity = startVector;
+            _rb.linearVelocity = direction.normalized * randomSpeed;
         }
 
         private void ApplyDissolve() => _dissolver.StartDissolve(DissolveState.Dissolve);

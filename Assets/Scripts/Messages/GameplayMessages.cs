@@ -11,4 +11,9 @@ namespace Messages
             Debug.Log($"BallEnteredDeadZoneMessage Fired. Content: {content}");
         }
     }
+    
+    public class BallResetMessage : ITinyMessage
+    {
+        public object Sender { get; }
+    }
 }

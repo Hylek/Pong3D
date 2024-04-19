@@ -1,5 +1,5 @@
+using Messages;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
 namespace Gameplay
@@ -9,7 +9,8 @@ namespace Gameplay
         [SerializeField] private float speed, movementRange;
         [SerializeField] private float ballDistanceToMove;
         [SerializeField] private float minZ, maxZ;
-        
+
+        private bool _canMove;
         private GameObject _ball;
 
         protected override void Awake()
@@ -17,10 +18,17 @@ namespace Gameplay
             base.Awake();
 
             _ball = GameObject.FindGameObjectWithTag("Ball");
+            
+            _canMove = true;
+            
+            Subscribe<BallResetMessage>(OnBallReset);
+            Subscribe<BallEnteredDeadZoneMessage>(OnBallDead);
         }
 
         private void FixedUpdate()
         {
+            if (!_canMove) return;
+             
             if (!IsBallWithinDistance(_ball.transform.position.x, ballDistanceToMove)) return;
             
             var desiredZ = Mathf.Clamp(_ball.transform.position.z, 
@@ -38,6 +46,16 @@ namespace Gameplay
             var distanceToPaddle = Mathf.Abs(ballX - transform.position.x);
             
             return distanceToPaddle < triggerDistance;
+        }
+        
+        private void OnBallDead(BallEnteredDeadZoneMessage obj)
+        {
+            _canMove = false;
+        }
+        
+        private void OnBallReset(BallResetMessage obj)
+        {
+            _canMove = true;
         }
     }
 }

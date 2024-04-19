@@ -18,7 +18,10 @@ namespace Gameplay
             base.Awake();
             
             _input = GetComponent<PlayerInput>();
-            _movement = _input.actions["Movement"]; // todo: Better way than just hard coded string? Will break if action name ever changes (unlikely).
+            
+            // todo: Better way than just hard coded string? Will break if action name ever changes (unlikely).
+            // todo: Generating a script based on the input map prevents this but is more complex and less powerful (Cannot change schemas)
+            _movement = _input.actions["Movement"];
         }
 
         private void Update()
