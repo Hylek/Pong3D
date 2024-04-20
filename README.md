@@ -10,3 +10,7 @@ Future Features:
 - Sounds
 - Cross-platform Support
 - Networked Multiplayer
+
+
+Play V1 via WebGL now: https://xylax.itch.io/pong3d
+(Recommended that you use a Chromium based browser for best performance/appearance)
